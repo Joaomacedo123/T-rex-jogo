@@ -122,6 +122,12 @@ function draw(){
 
 
   if(gamestate === "PLAY") {
+     if( touches.length>0 || keyDown("space") && trex.isTouching(solo)){
+    trex.velocityY= -12
+    pulo.play()
+    touches = []
+    } 
+
     score = score + Math.round(frameRate()/50)
     gameover.visible= false
     restart.visible= false
@@ -134,12 +140,7 @@ function draw(){
     }
 
 
-    if( touches.lenght>0 || keyDown("space") && trex.isTouching(solo)){
-    trex.velocityY= -12
-    pulo.play()
-    touches = []
-    } 
-
+   
   trex.velocityY = trex.velocityY +0.9
 
     if(solo.x<0) {
