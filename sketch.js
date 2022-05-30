@@ -164,6 +164,8 @@ trex.velocityY = 0
 
 if(touches(restart) ||mousePressedOver(restart)) {
 reset()
+  touches = []
+
 }
 
 gameover.visible = true
