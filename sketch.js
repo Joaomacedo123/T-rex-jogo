@@ -122,7 +122,7 @@ function draw(){
 
 
   if(gamestate === "PLAY") {
-     if( touches.length>0 || keyDown("space") && trex.isTouching(solo)){
+     if( touches.length>0 && trex.isTouching(solo) || keyDown("space") && trex.isTouching(solo)){
     trex.velocityY= -12
     pulo.play()
     touches = []
@@ -162,7 +162,7 @@ function draw(){
 solo.velocityX = 0
 trex.velocityY = 0
 
-if(mousePressedOver(restart)) {
+if(touches(restart) ||mousePressedOver(restart)) {
 reset()
 }
 
