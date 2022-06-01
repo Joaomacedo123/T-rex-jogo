@@ -162,9 +162,8 @@ function draw(){
 solo.velocityX = 0
 trex.velocityY = 0
 
-if(touches(restart) ||mousePressedOver(restart)) {
+if(mousePressedOver(restart)) {
 reset()
-  touches = []
 
 }
 
